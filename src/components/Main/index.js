@@ -3,6 +3,11 @@ import EmployeeData from "../EmployeeData/index"
 import API from "../../utils/API";
 
 class Main extends Component {
+
+    state = {
+        result: {},
+        search: ""
+    };
     
     render() {
         return (
