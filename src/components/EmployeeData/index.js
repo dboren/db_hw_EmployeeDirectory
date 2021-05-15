@@ -1,6 +1,7 @@
 import React from "react";
 
 function EmployeeData(props) {
+    console.log("props: ", props)
     return (
         <div>
             <img alt="employee" src={props.results.picture.thumbnail}></img>

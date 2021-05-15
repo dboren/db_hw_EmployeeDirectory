@@ -6,16 +6,21 @@ class Main extends Component {
 
     state = {
         result: {},
-        search: ""
+        search: "",
+        image: ""
     };
 
-    // componentDidMount() {
-    //     this.getEmployeeData();
-    // };
+    componentDidMount() {
+        this.getEmployeeData();
+    };
 
-    getEmployeeData = query => {
-        API.search(query)
-            .then(res => this.setState({ result: res.data }))
+    getEmployeeData = () => {
+        API.getRandos()
+            .then(res =>
+                this.setState({
+                    image: res.picture.thumbnail
+                })
+            )
             .catch(err => console.log(err));
     };
 
@@ -41,6 +46,9 @@ class Main extends Component {
                             <td>10/16/1957</td>
                         </tr>
                         <tr border="1"></tr>
+                            <td>
+                                <img src={this.state.image}></img>
+                            </td>
                         <tr border="1"></tr>
                         <tr border="1"></tr>
                         <tr border="1"></tr>
