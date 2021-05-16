@@ -16,11 +16,13 @@ class Main extends Component {
 
     getEmployeeData = () => {
         API.getRandos()
-            .then(res =>
+            .then(res => {
+                console.log('res', res);
+            
                 this.setState({
-                    image: res.picture.thumbnail
+                    image: res.data.results[0].picture.medium
                 }).then(console.log("res:", res))
-                
+            } 
             )
             .catch(err => console.log(err));
     };
