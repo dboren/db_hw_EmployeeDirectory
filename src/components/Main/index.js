@@ -7,11 +7,11 @@ class Main extends Component {
     state = {
         results: [],
         search: "",
-        image: ""
     };
 
     componentDidMount() {
         this.getEmployeeData();
+        console.log("EmployeeData: ", EmployeeData)
     };
 
     getEmployeeData = () => {
