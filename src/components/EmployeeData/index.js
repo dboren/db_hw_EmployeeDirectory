@@ -4,11 +4,15 @@ function EmployeeData(props) {
     console.log("props: ", props)
     return (
         <div>
-            <img alt="employee" src={props.results.picture.thumbnail}></img>
-            <p>{props.results.name.first} {props.results.name.last}</p>
-            <p>{props.results.phone}</p>
-            <p>{props.results.email}</p>
-            <p>{props.results.dod}</p>
+            {props.results.map(result => (
+            <tr border="1">
+                <td><img alt="employee" src={result.picture.medium}></img></td>
+                <td>{result.name.first} {result.name.last}</td>
+                <td>{result.phone}</td>
+                <td>{result.email}</td>
+                <td>{result.dob}</td>
+            </tr>
+            ))}
          </div>
     );
     }

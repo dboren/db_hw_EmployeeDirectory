@@ -31,6 +31,7 @@ class Main extends Component {
     
     
     render() {
+
         return (
             <div>
                 <table border="1">
@@ -42,6 +43,7 @@ class Main extends Component {
                             <th scope="col">email address</th>
                             <th scope="col">DOB</th>
                         </tr>
+                        {/* <EmployeeData results={this.state.results} /> */}
                         <tr border="1">
                             <td>Image will go here</td>
                             <td>Rusty Shackleford</td>
