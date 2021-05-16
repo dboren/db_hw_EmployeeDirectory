@@ -19,7 +19,8 @@ class Main extends Component {
             .then(res =>
                 this.setState({
                     image: res.picture.thumbnail
-                })
+                }).then(console.log("res:", res))
+                
             )
             .catch(err => console.log(err));
     };
@@ -47,7 +48,7 @@ class Main extends Component {
                         </tr>
                         <tr border="1"></tr>
                             <td>
-                                <img src={this.state.image}></img>
+                                <img src={this.state.image} alt="random employee"></img>
                             </td>
                         <tr border="1"></tr>
                         <tr border="1"></tr>
