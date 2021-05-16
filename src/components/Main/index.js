@@ -5,7 +5,7 @@ import API from "../../utils/API";
 class Main extends Component {
 
     state = {
-        result: {},
+        results: [],
         search: "",
         image: ""
     };
@@ -20,7 +20,8 @@ class Main extends Component {
                 console.log('res', res);
             
                 this.setState({
-                    image: res.data.results[0].picture.medium
+                    results: res.data
+                    // image: res.data.results.picture.medium
                 }).then(console.log("res:", res))
             } 
             )
@@ -50,7 +51,7 @@ class Main extends Component {
                         </tr>
                         <tr border="1"></tr>
                             <td>
-                                <img src={this.state.image} alt="random employee"></img>
+                                <img src={this.state.results} alt="random employee"></img>
                             </td>
                         <tr border="1"></tr>
                         <tr border="1"></tr>
